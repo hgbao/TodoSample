@@ -10,7 +10,9 @@
     "test": "jest",
     "lint": "eslint .",
     "eslint": "./node_modules/.bin/eslint",
-    "lint-staged": "./node_modules/.bin/lint-staged"
+    "lint-staged": "./node_modules/.bin/lint-staged",
+    "storybook-ios": "ENVFILE=.env.storybook yarn ios",
+    "storybook-android": "ENVFILE=.env.storybook yarn android"
   },
   "dependencies": {
     "react": "16.9.0",
@@ -21,6 +23,12 @@
     "@babel/core": "^7.7.4",
     "@babel/runtime": "^7.7.4",
     "@react-native-community/eslint-config": "^0.0.5",
+    "@storybook/addon-actions": "^4.1.6",
+    "@storybook/addon-knobs": "^4.1.6",
+    "@storybook/addon-links": "^4.1.6",
+    "@storybook/addon-ondevice-knobs": "^4.1.6",
+    "@storybook/addons": "^4.1.6",
+    "@storybook/react-native": "^4.1.6",
     "babel-jest": "^24.9.0",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
