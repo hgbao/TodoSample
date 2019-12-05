@@ -5,3 +5,4 @@ import './FloatingAddButton.story';
 import './PriorityTag.story';
 import './DateTag.story';
 import './TaskItem.story';
+import './EditTaskView.story';
