@@ -4,3 +4,4 @@ import './EditableTextView.story';
 import './FloatingAddButton.story';
 import './PriorityTag.story';
 import './DateTag.story';
+import './TaskItem.story';
