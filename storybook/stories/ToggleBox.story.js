@@ -4,9 +4,11 @@ import { storiesOf } from '@storybook/react-native';
 
 import ToggleBox from '@components/ToggleBox';
 
+import { AppStyles } from '@theme';
+
 storiesOf('ToggleBox', module).add('Default', () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={AppStyles.centerScreen}>
       <ToggleBox />
     </View>
   );
