@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
+import * as RNLocalize from 'react-native-localize';
+
+import { LanguageConfig } from '@config';
 
 import './rn-addons';
 
@@ -20,6 +23,13 @@ const StorybookUIRoot = getStorybookUI({ port: 7007, onDeviceUI: true });
 // https://github.com/storybooks/storybook/issues/2081
 // eslint-disable-next-line react/prefer-stateless-function
 const StorybookUIHMRRoot = () => {
+  useEffect(() => {
+    RNLocalize.addEventListener('change', () => {
+      LanguageConfig.setI18nConfig();
+    });
+    return RNLocalize.removeEventListener('change');
+  }, []);
+
   return <StorybookUIRoot />;
 };
 
