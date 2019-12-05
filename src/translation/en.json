@@ -1,0 +1,12 @@
+{
+  "error": "Error",
+  "error-unknown-error": "Unknown error",
+  "task-name-placeholder": "Task name",
+  "task-date-placeholder": "Due date",
+  "task-title": "My tasks",
+  "task-priority-high": "High",
+  "task-priority-medium": "Medium",
+  "task-priority-low": "Low",
+  "task-action-save": "Save",
+  "task-action-delete": "Delete"
+}
