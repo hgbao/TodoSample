@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { AppStyles, AppColors } from '@theme';
 
@@ -17,6 +17,8 @@ const ToggleBox = ({ isActive, onToggle }) => {
     _setIsActive(!_isActive);
     onToggle && onToggle(!_isActive);
   }, [_isActive, onToggle]);
+
+  useEffect(() => _setIsActive(prevState => (prevState !== isActive ? isActive : prevState)), [isActive]);
 
   // Rendering
   const _renderCheckIcon = useMemo(() => {
