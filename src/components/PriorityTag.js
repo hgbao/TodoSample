@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { TaskPriorityType, TaskPriorityPreference } from '@constants/task';
 import { AppSizes, AppFonts, AppStyles, AppColors } from '@theme';
@@ -26,6 +26,10 @@ const PriorityTag = ({ style, priorityType = TaskPriorityType.LOW, onChange, isA
     _setPriorityType(nextPriority);
     onChange && onChange(nextPriority);
   }, [_priorityType, onChange]);
+
+  useEffect(() => _setPriorityType(prevState => (prevState !== priorityType ? priorityType : prevState)), [
+    priorityType
+  ]);
 
   return (
     <TouchableOpacity

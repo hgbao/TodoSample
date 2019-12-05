@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
@@ -46,6 +46,8 @@ const DateTag = ({ style, timestamp, onChange }) => {
     _setTimestamp(null);
     onChange && onChange(null);
   }, [onChange]);
+
+  useEffect(() => _setTimestamp(prevState => (prevState !== timestamp ? timestamp : prevState)), [timestamp]);
 
   // Rendering
   const _renderDatePicker = useMemo(

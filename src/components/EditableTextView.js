@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 import { AppFonts } from '@theme';
 
@@ -14,6 +14,8 @@ const EditableTextView = ({ text, placeholder, onChange }) => {
 
   const changeTextCallback = useCallback(value => _setText(value), [_setText]);
   const endEditingCallback = useCallback(() => text !== _text && onChange(_text.trim()), [_text, onChange, text]);
+
+  useEffect(() => _setText(prevState => (prevState !== text ? text : prevState)), [text]);
 
   return (
     <TextInput
