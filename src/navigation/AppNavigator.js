@@ -3,13 +3,13 @@ import { Image } from 'react-native';
 import { createAppContainer, SafeAreaView } from 'react-navigation';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 
-import LoadingView from '@components/LoadingView';
+import { UncompletedTaskView, CompletedTaskView } from '@containers/TaskView';
 import { AppColors } from '@theme';
 
 const AppNavigator = createMaterialTopTabNavigator(
   {
     UncompletedTask: {
-      screen: LoadingView,
+      screen: UncompletedTaskView,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => {
           return <Image source={require('@images/CalendarIcon.png')} style={{ tintColor }} />;
@@ -17,7 +17,7 @@ const AppNavigator = createMaterialTopTabNavigator(
       }
     },
     CompletedTask: {
-      screen: LoadingView,
+      screen: CompletedTaskView,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => {
           return <Image source={require('@images/ChecklistIcon.png')} style={{ tintColor }} />;
